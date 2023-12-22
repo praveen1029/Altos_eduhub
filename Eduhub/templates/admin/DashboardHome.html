@@ -1,0 +1,408 @@
+{% extends 'admin/DashboardBase.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+<style>
+    .msg-box
+    {
+        padding: 1em;
+        text-align: center;
+        font-size: 0.85em;
+     
+        margin-bottom: 1em;
+    }
+    .msg-box .delete-msg
+    {
+        color: rgb(238, 23, 23);
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+    #msgbox {
+        transition: opacity 1s ease-in-out;
+    }
+    #msgbox.hidden {
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+    }
+   
+    .text-bold-7
+    {
+        font-weight: 700;
+    }
+    .recent-files-box
+    {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+        padding:0.60em 1em;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .recent-files-box .card
+    {
+        border: none;
+        outline: none;
+        font-size: 0.90em;
+        margin: 0.60em;
+        padding: 0.90em 1.3em;
+        box-shadow: rgba(185, 185, 186, 0.2) 0px 7px 29px 0px;
+        border: 16px;
+        font-size: 0.87em;
+        font-weight: 500;
+    }
+    .enquery-box, .enroll-box 
+    {
+        display: flex;
+        text-align: start;
+        flex-direction: column;
+        justify-content: start;
+        gap: 1rem;
+       
+    }
+    .enroll-box h5, .enquery-box h5{
+        font-size: 0.90em;
+        color: rgb(39, 39, 105);
+        letter-spacing: 0.06em;
+        margin-top: 1em;
+    }
+    .card h6
+    {
+        font-size: 0.90rem;
+    }
+    .card h6 .fa{
+        padding: 0.10rem  0.30rem;
+    }
+    .enroll__top__box
+    {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+    .enroll__top__box span
+    
+    {
+        padding: 0.20rem 0.55rem;
+        background-color: rgb(43, 185, 206);
+        color: #fff;
+    }
+    .enroll__top__box span .fa{
+        font-size: 10px;
+    }
+    .Details__box span
+    {
+     padding: 0.20rem  0.30rem;
+     margin-top: 0.50rem;
+    }
+    .Details__box__message
+    {
+        
+        margin-top: 0.80rem;
+    }
+    .Details__box__message span
+    {
+        padding: 0.20rem  0.30rem;
+        margin-top: 0.50rem;
+        font-size: 0.80rem;
+    }
+    .Details__box__message span .fa
+    {
+        font-size: 12px;
+        padding-right: 0.25rem;
+    }
+    .Details__box span .fa
+    {
+        font-size: 12px;
+        padding-right: 0.25rem;
+    }
+    .recent-files-box .card .card-header
+    {
+        border: none;
+        outline: none;
+     
+    }
+    .enqueies__details__box
+    {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    @media (max-width:762px)
+    {
+        .recent-files-box
+    {
+       display: grid;
+       grid-template-columns:repeat(1,1fr)
+    }
+    .enquery-box, .enroll-box 
+    {
+        display: flex;
+        text-align: start;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .enqueies__details__box
+    {
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+    }
+    .enqueies__details__box span
+    {
+        margin-top: 0.40rem;
+    }
+    .enroll__top__box span
+    
+    {
+        padding: 0.10rem 0.45rem;
+        background-color: rgb(43, 185, 206);
+        color: #fff;
+    }
+    .enroll__top__box span .fa{
+        font-size: 8px;
+    }
+    }
+   
+</style>
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        
+    </div>
+
+    
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                               Popular Courses</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{file_up_count}}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-file fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Enrolls</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{enrolls_count}}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-file fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Enquery</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{enquerys_count}}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-file fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Reports</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-file fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        
+    </div>
+
+    {% if delete_msg%}
+    <div class="msg-box" id="msgbox">
+        <span class="delete-msg" id="msgbox">{{delete_msg}}</span>
+    </div>
+    {% endif %}
+    
+
+    <!-- Content Row -->
+    
+   
+
+
+    <h6 class="mt-3 mb-4 text-bold-7">Todays Enrolls and Enquery</h6>
+    <div class="recent-files-box">
+       
+       
+        <div class="enroll-box p-3">
+            
+            {% if enrolls %}
+            <h5 class="mb-3 text-center"> Today Enrolls </h5>
+           
+            {% for enrl in enrolls %}
+            <div class="card">
+                <div class="enroll__top__box">
+                    <h6><i class="fa fa-user" aria-hidden="true"></i>  {{enrl.name}} </h6>
+                    <a href="{% url 'Enroll_Candidate_Details' enrl.id %}"><span><i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+                </div>
+               
+                <p class="Details__box">  
+                    <span><i class="fa fa-envelope" aria-hidden="true"></i> {{enrl.email}} </span>
+                    <span> <i class="fa fa-phone" aria-hidden="true"></i>  {{enrl.phone}} </span>
+                    <span> <i class="fa fa-graduation-cap" aria-hidden="true"></i>  {{enrl.course.course_name}} </span> 
+                </p>
+                
+            </div>
+            {% endfor %}
+            {% else %}
+            <h5 class="mb-3 text-center"> No New Enrolls </h5>
+            {% endif %}
+        </div>
+        <div class="enquery-box p-3">
+            {% if enquerys %}
+            <h5 class="mb-3 text-center"> Today Enquries </h5>
+            {% for enq in enquerys %}
+            <div class="card">
+                <p class="enqueies__details__box"> 
+                    <span><i class="fa fa-user" aria-hidden="true"></i> {{enq.name}}</span>
+                    
+                    
+                </p>
+                <div class="Details__box">
+                    <span><i class="fa fa-envelope" aria-hidden="true"></i> {{enq.email}}</span> 
+                    <span><i class="fa fa-phone" aria-hidden="true"></i> {{enq.phone}}</span>
+                    <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{enq.place}}</span>
+                </div>
+                <div class="Details__box__message">
+                    <span><i class="fa fa-comments" aria-hidden="true"></i>{{enq.enq_msg}}</span>
+                </div>
+               
+            </div>
+            {% endfor %}
+            {% else %}
+            <h5 class="mb-3 text-center"> No New Enquries </h5>
+            {% endif %}
+           
+        </div>
+       
+       
+
+    </div>
+
+
+</div>
+
+<!-- Confirmation Modal css -->
+<style>
+    .modal-content
+    {
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    }
+    .modal-content, .modal-header, .modal-footer
+    {
+        border: none;
+        outline: none;
+        border-radius: 0px;
+    }
+    .titlesize
+    {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: rgb(227, 59, 33);
+    }
+    .modal-body
+    {
+        font-size: 0.90em;
+        font-weight: 600;
+        
+    }
+    .modal-body .file_name
+    {
+        font-size: 1em;
+        font-weight: 700;
+        color: rgb(227, 23, 23);
+    }
+    .btn
+    {
+        font-size: 0.85em;
+        border-radius: 0px;
+        font-weight: 600;
+    }
+</style>
+
+<!-- end-->
+
+
+<!-- Delete Model -->
+{% for i in file_up %}
+
+<div class="modal fade" id="delete-modal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="delete-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title titlesize" id="delete-modal-label">Confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete <span class='file_name'> {{i.file_Name}} </span> file ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <a href="#"><button type="button" class="btn btn-danger" id="delete-confirm">Delete</button></a>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endfor %}
+
+<!--- end -->
+
+
+<script>
+    setTimeout(function() {
+        document.getElementById('msgbox').classList.add('hidden');
+    }, 5000);
+</script>
+
+
+
+{% endblock %}

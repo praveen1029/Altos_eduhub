@@ -1,0 +1,421 @@
+{% load static %}
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta content="Python Online Training and Certifications" name="keywords">
+
+       <meta content="Apply for the training and certificate in kerala to upgrade your skills and knowledge in IT industry" name="description">
+
+       <!--=============== FAVICON ===============-->
+       <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
+
+       <!--=============== BOXICONS ===============-->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+       <!--=============== SWIPER CSS ===============--> 
+       <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+
+       <!--=============== CSS ===============-->
+       <link rel="stylesheet" href="static/css/styles.css">
+
+       <title>Best Software Training Institute in Infopark </title>
+
+       <style>
+        #contact
+        {
+            color: #fff;
+        }
+
+        .nav__link:hover{
+            font-size: large;
+        }
+       </style>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+   </head>
+   <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <div class="position-relative" style="z-index: 1;" >
+                <div class="position-absolute start-0 top-0 top_tree_effect" >
+                  <div class="d-flex" >
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                  </div>
+                </div>
+            </div>
+            <nav class="nav container" style="margin-top: 5vh;">
+                <a href="{% url 'HomePage' %}" class="nav__logo">
+                    <img src="static/img/logo1.png" style="width:100%; height:100%" alt="Altos Eduhub logo">
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="{% url 'HomePage' %}" class="nav__link" style="color: #ff3939;  text-decoration: none;">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'AboutPage' %}" class="nav__link" style="text-decoration: none;">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'CoursePage' %}" class="nav__link" style="text-decoration: none;">Course</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'PlacementPage' %}" class="nav__link" style="text-decoration: none;">Placement</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'EventsPage' %}" class="nav__link" style="text-decoration: none;">Events</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'BlogPage' %}" class="nav__link" style="text-decoration: none;" >Blog</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'ContactPage' %}" class="nav__link active-link" id="contact" style="text-decoration: none;">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x' ></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                    <div class="nav__shop" id="cart-shop">
+                        <i class='bx bxs-chat'></i>
+                    </div>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-grid-alt' ></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+       
+        <!--==================== CHAT BOX ====================-->
+        <div class="cart" id="cart">
+            <i class='bx bx-x cart__close' id="cart-close"></i>
+
+            <!-- <h2 class="cart__title-center">Chat</h2> -->
+            <div class="card ChatBox" id="chat-container">
+                <div class="card-head">
+                    <div class="chatimg"></div>
+                    <img src="{% static 'img/favicon.ico' %}">
+                    <p>Altos EduHub</p>
+                </div>
+                <div class="card-body">
+                    <div class="chat_img_box">
+                        <img src="{% static 'img/logo1.png' %}">
+                    </div>
+                    <div class="chatmain_content">
+                        <p>Welcome to altos eduhub! Use the chat box to get 
+                            in touch with us and we'll be happy to assist you 
+                            with any questions or inquiries you may have.
+                        </p>
+                    </div>
+                    <div  class="chat_messages" id="chat-messages"></div>
+                   
+                    <!-- <p> Welcome To Altos EduHub</p> -->
+                </div>
+                <div class="card-footer">
+                    <input type="text" id="user-input" class="int_text" placeholder="Type your message...">
+                    <button class="send_btn" type="button" id="send-btn"><i class='bx bxs-send' ></i></button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <main class="main" style="background-color: #1f1f1f;">
+             <!--==================== HOME ====================-->
+             <section class="home" id="home">
+                <div class="home__container container grid">
+                    <div class="home__img-bg" style="background-image: url('static/img/register.jpg'); background-repeat: no-repeat;background-size:cover;">
+                        <img src="#" alt="" class="home__img">
+                    </div>
+    
+                    <div class="home__social text-light mt-5"> 
+                        <a href="https://www.facebook.com/people/ALTOS-Technologies/100084886970426/" target="_blank" class="home__social-link">
+                            Facebook
+                        </a>
+                        <a href="https://wa.me/919074156818" target="_blank" class="home__social-link">
+                            WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/altos_technologies/" target="_blank" class="home__social-link">
+                            Instagram
+                        </a>
+                    </div>
+    
+                    <div class="home__data">
+                        {% if msg %}
+                        <p class="message_data" >{{msg}}</p>
+                        {% endif %}
+                        <h1 class="home__title">Explore Your Future With Us </h1>
+                        <p class="home__description text-light">
+                            Welcome to Altos Eduhub's Contact Us page! We're thrilled that you're interested 
+                            in our on-the-job training programs and would love to hear from you.
+                            <BR>
+                                Whether you have questions about our training programs or are ready 
+                                to enroll, our team of experts is here to help you every step of the way.
+                        </p>
+                        <!-- <span class="home__price">$1245</span> -->
+
+                        <div class="home__btns">
+                            <a href="#second-section" class="button button--gray button--small">
+                                Register
+                            </a>
+
+                            <!-- <button class="button home__button">ADD TO CART</button> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+                
+                 <!--==================== NEWSLETTER ====================-->
+            <section class="newsletter section container" id="second-section">
+                <div class="newsletter__bg grid">
+                    <div>
+                        <h2 class="newsletter__title"> Fill Your Details<br> </h2>
+                        <p class="newsletter__description">
+                            To get in touch with us, simply fill out the contact form on this page or email us 
+                            at info@Altostechnologies.in . Our team will get back to you as soon as possible to address your inquiry.
+                        </p>
+                        
+                    </div>
+ 
+                    <form action="{% url 'saveEnquiry' %}" method="post" class="newsletter__subscribe">
+                        {% csrf_token %}
+                        <input type="text"  name="join_name" placeholder="Enter your name"  class="newsletter__input"  required>
+                        <input type="email" name="join_email" id="emailInput" placeholder="Enter your email" class="newsletter__input" required>
+                        <div id="emailValidationMessage" ></div>
+                        <input type="tel"  name="join_phone" id="phoneInput" pattern="[6789][0-9]{9}" placeholder="Enter your phone number" class="newsletter__input" required>
+                        <div id="phoneValidationMessage" ></div>
+                        <input type="text" name="join_place" placeholder="Enter your place" class="newsletter__input" required>
+                        <input type="text" name="join_qualific" placeholder="Enter your qualification" class="newsletter__input" required>
+                        <input type="text" name="join_stream" placeholder="Enter your stream" class="newsletter__input" required>
+                        <input type="text"  name="join_passyear" placeholder="Enter year of pass out" class="newsletter__input" >
+                        <span  class="regisrter_info">Provide the (start date, end date) last course that you completed</span>
+                        <input type="date" name="join_sdate" placeholder="Enter start date" class="newsletter__input" >
+                        <input type="date" name="join_edate" placeholder="Enter end date" class="newsletter__input" >
+                        <input type="text" name="join_exp" placeholder="Do you have any experience(y/n)" class="newsletter__input">
+                        <input type="number" name="join_expno"  min="0" placeholder="Enter the year of experience" class="newsletter__input" >
+                        <select class="newsletter__input" name="join_course" >
+                            <option value="0" style="color: rgb(49, 48, 48);">select the course</option>
+                            {% for course in courses %}
+                            <option value="{{course.id}}" style="color: rgb(49, 48, 48);">{{course.course_name}}</option>
+                            {% endfor %}
+                        </select>
+                        <select class="newsletter__input" name="join_course_type" required >
+                            <option value="0" style="color: rgb(49, 48, 48);">select the course Duration</option>
+                            <option value="1" style="color: rgb(49, 48, 48);">Short Team Internship</option>
+                            <option value="2" style="color: rgb(49, 48, 48);">Internship</option>
+                            <option value="3" style="color: rgb(49, 48, 48);">On Job Training</option>
+                        </select>
+                        <input type="text" name="join_desig" placeholder="Enter your designation" class="newsletter__input" >
+                        
+                        <textarea class="newsletter__input" name="join_message"  placeholder="Enter your message" ></textarea>
+                       
+                        <button class="button" type="submit">
+                            JOIN
+                        </button>
+                    </form>
+
+                    
+                </div>
+                
+            </section>
+               
+    
+
+        </main>
+
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section" style="background-color: #1f1f1f;">
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <h3 class="footer__title">ALTOS EDUHUB</h3>
+
+                <ul class="footer__list text-light">
+                    <li> 1st Floor - Thapasya Building Infopark</li>
+                    <li>Kakkanad, Cochin</li>
+                    <li> +91 974 663 2202</li>
+                    <li> info@Altostechnologies.in</li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Quick Link</h3>
+
+                <ul class="footer__links">
+                   
+                    <li>
+                        <a href="{% url 'AboutPage' %}" class="footer__link text-light">About Us</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'ContactPage' %}" class="footer__link text-light">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link text-light">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link text-light">Terms & Conditions</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link text-light">FAQs & Help</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            
+
+            <div class="footer__content">
+                <h3 class="footer__title">Social</h3>
+
+                <ul class="footer__social">
+                    <a href="https://www.facebook.com/people/ALTOS-Technologies/100084886970426/" target="_blank" class="footer__social-link text-light">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+                    <a href="https://wa.me/919074156818" target="_blank" class="footer__social-link text-light">
+                        <i class='bx bxl-whatsapp' ></i>
+                    </a>
+                  
+                    <a href="https://www.youtube.com/@altostechnologies" target="_blank" class="footer__social-link text-light">
+                        <i class='bx bxl-youtube' ></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/mwlite/company/altos-technologies-kochi" target="_blank" class="footer__social-link text-light">
+                        <i class='bx bxl-linkedin' ></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/altos_technologies/" target="_blank" class="footer__social-link text-light">
+                        <i class='bx bxl-instagram' ></i>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <span class="footer__copy text-light">{% now "Y" %} &#169; AltosTechnologies. All rigths reserved</span>
+    </footer>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up"> 
+        <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+    </a>
+    <a href="https://wa.me/919074156818" class="scrollwh" id="scroll-wh"> 
+           
+        <i class='bx bxl-whatsapp scrollwh__icon' ></i>
+    </a>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="static/js/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="static/js/main.js"></script>
+    <script src="static/js/chat.js"></script>
+    
+
+     <!--===============PARALLS JS ===============-->
+     <script src="static/js/index.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+     <script type="text/javascript" src="//use.typekit.net/rws3een.js"></script>
+     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+     <script>
+        var image = document.getElementsByClassName('home__img');
+        new simpleParallax(image, {
+            delay: .4,
+            scale: 0.9,
+            transition: 'cubic-bezier(0,0,0,1)'
+            
+        });
+        $(function() {
+            $('#contact').addClass('expand');
+          });
+          document.querySelector("#close_popup").addEventListener("click", function()
+            {
+            document.querySelector(".popup_box_offer").style.display="none";
+            });
+        
+     </script>
+
+     <script>
+        var emailInput = document.getElementById("emailInput");
+        var emailValidationMessage = document.getElementById("emailValidationMessage");
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        emailInput.addEventListener("input", validateEmail);
+        
+        function validateEmail() {
+          var email = emailInput.value;
+          
+          if (emailPattern.test(email)) {
+            emailValidationMessage.textContent = "Email is valid!";
+            emailValidationMessage.style.fontSize="13px";
+            emailValidationMessage.style.color ="green";
+          } else {
+            emailValidationMessage.textContent = "Please enter a valid email address.";
+            emailValidationMessage.style.fontSize="13px";
+            emailValidationMessage.style.color="red";
+          }
+        }
+        </script>
+        <script>
+            var phoneInput = document.getElementById("phoneInput");
+            var phoneValidationMessage = document.getElementById("phoneValidationMessage");
+            
+            phoneInput.addEventListener("input", validatePhoneNumber);
+            
+            function validatePhoneNumber() {
+              var phoneNumber = phoneInput.value;
+            
+              // Remove any non-digit characters
+              phoneNumber = phoneNumber.replace(/\D/g, '');
+            
+              // Limit the input to 10 digits
+              if (phoneNumber.length > 10) {
+                phoneNumber = phoneNumber.slice(0, 10);
+                phoneInput.value = phoneNumber;
+              }
+            
+              // Check if the input consists of 10 digits only
+              if (/^\d{10}$/.test(phoneNumber)) {
+                phoneValidationMessage.textContent = "Phone number is valid!";
+                phoneValidationMessage.style.color = "green";
+                phoneValidationMessage.style.fontSize = "13px";
+              } else {
+                phoneValidationMessage.textContent = "Please enter a valid 10-digit phone number.";
+                phoneValidationMessage.style.color = "red";
+                phoneValidationMessage.style.fontSize = "13px";
+              }
+              if (/^[6-9]\d{9}$/.test(phoneNumber)) {
+                phoneValidationMessage.textContent = "Phone number is valid!";
+                phoneValidationMessage.style.color = "green";
+                phoneValidationMessage.style.fontSize = "13px";
+              } else {
+                phoneValidationMessage.textContent = "Please enter a valid phone number starting with 6, 7, 8, or 9 and having a total of 10 digits.";
+                phoneValidationMessage.style.color = "red";
+                phoneValidationMessage.style.fontSize = "13px";
+              }
+            }
+            </script>
+
+
+</body>
+</html>
+

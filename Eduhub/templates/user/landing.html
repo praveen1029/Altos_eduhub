@@ -1,0 +1,685 @@
+ {% load static %}
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Best Software Institute Of Kochi , Best Python Training Institute In Kerala " name="keywords">
+        <meta content="Altos Eduhub - Unleash your software skills with the leading software training Institute in Kerala.
+         Boost your career with expert-led job oriented courses, hands-on projects, and industry-relevant curriculum. 
+         Gain the competitive edge in the tech industry today." name="description">
+        
+
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== SWIPER CSS ===============--> 
+        <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="static/css/styles.css">
+       
+
+        <title> Best Software Training Institute in Kerala</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+
+    <body>
+        <style>
+            .home__description {
+                margin-bottom: var(--mb-1-5);
+                line-height: 1.75rem;
+                font-size: 1em;
+                letter-spacing: 0.05em;
+            }
+            .section {
+                padding: 2rem 0 1rem;
+            }
+            .support{
+                height: fit-content;
+            }
+            @media screen and (min-width: 1090px){
+                .story__img {
+                    left: 5rem;
+                    top: 0;
+                }
+            }
+            @media screen and (min-width: 992px){
+                .story__square, .story__img {
+                    width: 400px;
+                }
+            }
+
+            .nav__list a{
+                text-decoration: none;
+            }
+        
+            .nav__link:hover{
+                font-size: large;
+            }
+
+            .xmas-button{
+                font-size: 1em;
+                padding: 1em;
+                /* background: #29d5e5c9; */
+                background: linear-gradient(
+                    45deg,
+                    #840000,
+                    rgb(187, 0, 0),
+                    #5c0404 100%
+                    );
+                font-weight: 600;
+                text-transform: uppercase;
+                border: none;
+                border-radius: 4px;
+            }
+            
+            #featured a{
+                text-decoration: none;
+                color: white;
+            }
+            
+            #new a{
+                text-decoration: none;
+                color: white;
+            }
+        </style>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <div class="position-relative" style="z-index: 1;" >
+                <div class="position-absolute start-0 top-0 top_tree_effect" >
+                  <div class="d-flex" >
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                    <img draggable="false" src="{% static 'xmas/decor/decor_top.png' %}" width="500vw" alt="">
+                  </div>
+                </div>
+            </div>
+            <nav class="nav container" style="margin-top: 5vh;">
+                <a href="{% url 'HomePage' %}" class="nav__logo">
+                    <img src="static/img/logo1.png" style="width:100%; height:100%" alt="Altos Eduhub logo">
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="{% url 'HomePage' %}" class="nav__link" style="color: #ff3939;">Home</a>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="{% url 'AboutPage' %}" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'CoursePage' %}" class="nav__link">Course</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'PlacementPage' %}" class="nav__link">Placement</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'EventsPage' %}" class="nav__link">Events</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'BlogPage' %}" class="nav__link">Blog</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'ContactPage' %}" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x' ></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                    <div class="nav__shop" id="cart-shop">
+                        <i class='bx bxs-chat'></i>
+                    </div>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-grid-alt' ></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!--==================== CART ====================-->
+        <div class="cart" id="cart">
+            <i class='bx bx-x cart__close' id="cart-close"></i>
+
+            <!-- <h2 class="cart__title-center">Chat</h2> -->
+            <div class="card ChatBox" id="chat-container">
+                <div class="card-head">
+                    <div class="chatimg"></div>
+                    <img src="{% static 'img/favicon.ico' %}">
+                    <p>Altos EduHub</p>
+                </div>
+                <div class="card-body">
+                    <div class="chat_img_box">
+                        <img src="{% static 'img/logo1.png' %}">
+                    </div>
+                    <div class="chatmain_content">
+                        <p>Welcome to altos eduhub! Use the chat box to get 
+                            in touch with us and we'll be happy to assist you 
+                            with any questions or inquiries you may have.
+                        </p>
+                    </div>
+                    <div  class="chat_messages" id="chat-messages"></div>
+                   
+                   
+                </div>
+                <div class="card-footer">
+                    <input type="text" id="user-input" class="int_text" placeholder="Type your message...">
+                    <button class="send_btn" type="button" id="send-btn"><i class='bx bxs-send' ></i></button>
+                </div>
+            </div>
+
+        </div>
+       
+
+        <!-- ===================POPUP CARD OFFER ==================-->
+        {% if offer.offer_status == '0' %}
+        <div class="container popup_container" id="popupbox">
+            <div class="popup_box_offer" >
+                <button id="close_popup">&times</button>
+                <div class="celebr">
+                    <img src="{% static 'img/celebration.jpg' %}" alt="The best software training institute in Kochi">
+                </div>
+                <div class="popupbox">
+                   
+                    <div class="ofer_image">
+                        <img src="{% static 'img/offerimage.jpg' %}" alt="The best software training institute in Kochi">
+                    </div>
+                    <div>
+                        <h2>{{offer.title_name}}</h2>
+                        <p> 
+                            {{offer.offer_dics}}
+                        </p>
+                        <div class="check_offer">
+                            <a href="{% url 'CoursePage' %}#featured">CHECH IT NOW</a>
+                        </div>
+                       
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+        {% endif %}
+       
+
+
+        <!--==================== MAIN ====================-->
+        <main class="main" style="background-color: #1f1f1f;">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home" style="background-image: url('static/img/bgr3.jpg'); background-size:cover;">
+                <div class="home__container container grid">
+                    <div class="home__img-bg " >
+                        <img src="static/img/home_inner.png" alt="" class="home__inner__img">
+                    </div>
+    
+                    <div class="home__social text-white mt-5">
+                        <a href="https://www.facebook.com/people/ALTOS-Technologies/100084886970426/" target="_blank" class="home__social-link">
+                            Facebook
+                        </a>
+                        <a href="https://wa.me/919074156818" target="_blank" class="home__social-link">
+                            WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/altos_technologies/" target="_blank" class="home__social-link">
+                            Instagram
+                        </a>
+                    </div>
+    
+    
+                    <div class="home__data" >
+                        <h1 class="home__title">Best Software Training <br> Institute of Kerala </h1>
+                        <p class="home__description1 ">
+                            <span>Enhance Your Skills with Top-Rated Software Courses in Kochi</span>
+                            <span>Empowering Your Tech Career with Expert Guidance.</span>
+                            
+                        </p>
+                        
+                        <!-- <div class="home__btns">
+                            <a href="{% url 'CoursePage' %}#offered-courses" class="button button--gray button--small">
+                                View Course
+                            </a>
+                            <a href="{% url 'RegisterForm' %}" class="button home__button">
+                                JOIN NOW
+                            </a>
+
+                           
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+            
+        
+
+
+            <!--==================== FEATURED ====================-->
+            <section class="featured section container" id="featured">
+                <h2 class="section__title">
+                    Secure Your IT Future
+                </h2>
+
+                <div class="featured__container grid">
+                    <article class="featured__card">
+                        <span class="featured__tag"></span>
+
+                        <img src="{% static 'img/jumpcarrer.jpg' %}" alt="Jumpstart Your IT Career" class="featured__img">
+
+                        <div class="featured__data">
+                            <h3 class="featured__title">Jumpstart Your IT Career</h3>
+                            <span class="featured__price"></span>
+                        </div>
+                       
+                        <a href="https://www.altoseduhub.com/Jumpstart-Your-IT-Career" target="_blank" class="button featured__button xmas-button">Explore</a>
+                        <!-- <button class="button featured__button">Explore</button> -->
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag"></span>
+
+                        <img src="{% static 'img/transit.jpg' %}" alt="Transitioning to IT" class="featured__img">
+
+                        <div class="featured__data">
+                            <h3 class="featured__title">Transitioning to IT</h3>
+                            <span class="featured__price"></span>
+                        </div>
+
+                        <a href="https://www.altoseduhub.com/Transitioning-to-IT" target="_blank" class="button featured__button xmas-button">Explore</a>
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag"></span>
+
+                        <img src="{% static 'img/brigeup.jpg' %}" alt="Bridging the Gap" class="featured__img">
+
+                        <div class="featured__data">
+                            <h3 class="featured__title">Bridging the Gap</h3>
+                            <span class="featured__price"></span>
+                        </div>
+
+                        <a href="https://www.altoseduhub.com/Bridging-the-Gap" target="_blank" class="button featured__button xmas-button">Explore</a>
+                    </article>
+                    
+
+                    <!-- <article class="featured__card">
+                        <span class="featured__tag"></span>
+
+                        <img src="{% static 'img/restart.jpg' %}" alt="Bridging the Gap" class="featured__img">
+                        
+
+                        <div class="featured__data">
+                            <h3 class="featured__title">Restart Your IT Career</h3>
+                            <span class="featured__price"></span>
+                        </div>
+
+                        <a href="https://www.altoseduhub.com/Restart-Your-IT-Career" target="_blank" class="button featured__button">Explore</a>
+                    </article> -->
+                </div>
+            </section>
+
+            <!--==================== NEW ====================-->
+            <section class="new section container" id="new">
+                <h2 class="section__title">
+                    Popular Courses
+                </h2>
+                
+                <div class="new__container">
+                    <div class="swiper new-swiper">
+                        <div class="swiper-wrapper">
+                            <article class="new__card swiper-slide">
+                                <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
+                                <img src="/media/img/courses/python.webp" alt="Python" class="new__img">
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">Python Development</h3>
+                                    <!-- <span class="new__price">980</span> -->
+                                </div>
+
+                                <a class="button new__button xmas-button" href="https://www.altoseduhub.com/Course" target="_blank" class="button home__button">
+                                    Know More
+                                </a>                        
+                            </article>
+                            <article class="new__card swiper-slide">
+                                <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
+                                <img src="/media/img/courses/mlearn.jpg" alt="Machine Learning" class="new__img">
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">Machine Learning</h3>
+                                    <!-- <span class="new__price">980</span> -->
+                                </div>
+
+                                <a class="button new__button xmas-button" href="https://www.altoseduhub.com/Course" target="_blank" class="button home__button">
+                                    Know More
+                                </a>                        
+                            </article>
+                            <article class="new__card swiper-slide">
+                                <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
+                                <img src="/media/img/courses/Benefits-of-ReactJS.jpg" alt="ReactJS" class="new__img">
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">React.JS</h3>
+                                    <!-- <span class="new__price">980</span> -->
+                                </div>
+
+                                <a class="button new__button xmas-button" href="https://www.altoseduhub.com/Course" target="_blank" class="button home__button">
+                                    Know More
+                                </a>                        
+                            </article>
+                            
+                            <article class="new__card swiper-slide">
+                                <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
+                                <img src="/media/img/courses/java.webp" alt="Java" class="new__img">
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">Java</h3>
+                                    <!-- <span class="new__price">980</span> -->
+                                </div>
+
+                                <a class="button new__button xmas-button" href="https://www.altoseduhub.com/Course" target="_blank" class="button home__button">
+                                    Know More
+                                </a>                        
+                            </article>
+                            <article class="new__card swiper-slide">
+                                <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
+                                <img src="/media/img/courses/Angular-JS.jpg" alt="Angular-JS" class="new__img">
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">Angular JS</h3>
+                                    <!-- <span class="new__price">980</span> -->
+                                </div>
+
+                                <a class="button new__button xmas-button" href="https://www.altoseduhub.com/Course" target="_blank" class="button home__button">
+                                    Know More
+                                </a>                        
+                            </article>
+                            <article class="new__card swiper-slide">
+                                <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
+                                <img src="/media/img/courses/md.webp" alt="ml&ds" class="new__img">
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">Machine Learning & Data Science</h3>
+                                    <!-- <span class="new__price">980</span> -->
+                                </div>
+
+                                <a class="button new__button xmas-button" href="https://www.altoseduhub.com/Course" target="_blank" class="button home__button">
+                                    Know More
+                                </a>                        
+                            </article>
+                            <article class="new__card swiper-slide">
+                                <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
+                                <img src="/media/img/courses/pd.jpg" alt="Python Django" class="new__img">
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">Python Django</h3>
+                                    <!-- <span class="new__price">980</span> -->
+                                </div>
+
+                                <a class="button new__button xmas-button" href="https://www.altoseduhub.com/Course" target="_blank" class="button home__button">
+                                    Know More
+                                </a>                        
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="newsletter section container mb-4" id="second-section" style="text-align: center;">
+                <h4 class="home__title">Explore Your Future With Us </h4>
+                <div class="newsletter__bg grid">
+                    <div>
+                        <h2 class="newsletter__title"> Fill Your Details<br> </h2>
+                        <p class="newsletter__description">
+                            To get in touch with us, simply fill out the contact form on this page or email us 
+                            at info@Altostechnologies.in . Our team will get back to you as soon as possible to address your inquiry.
+                        </p>
+                        
+                    </div>
+ 
+                    <form action="{% url 'saveEnquiry' %}" method="post" class="newsletter__subscribe">
+                        {% csrf_token %}
+                        <input type="text"  name="join_name" placeholder="Enter your name"  class="newsletter__input"  required>
+                        <input type="email" name="join_email" id="emailInput" placeholder="Enter your email" class="newsletter__input" required>
+                        <div id="emailValidationMessage" ></div>
+                        <input type="tel"  name="join_phone" id="phoneInput" pattern="[6789][0-9]{9}" placeholder="Enter your phone number" class="newsletter__input" required>
+                        <div id="phoneValidationMessage" ></div>
+                        <input type="text" name="join_place" placeholder="Enter your place" class="newsletter__input" required>
+                        <input type="text" name="join_qualific" placeholder="Enter your qualification" class="newsletter__input" required>
+                        <input type="text" name="join_stream" placeholder="Enter your stream" class="newsletter__input" required>
+                        <input type="text"  name="join_passyear" placeholder="Enter year of pass out" class="newsletter__input" >
+                        <span  class="regisrter_info">Provide the (start date, end date) last course that you completed</span>
+                        <input type="date" name="join_sdate" placeholder="Enter start date" class="newsletter__input" >
+                        <input type="date" name="join_edate" placeholder="Enter end date" class="newsletter__input" >
+                        <input type="text" name="join_exp" placeholder="Do you have any experience(y/n)" class="newsletter__input">
+                        <input type="number" name="join_expno"  min="0" placeholder="Enter the year of experience" class="newsletter__input" >
+                        <select class="newsletter__input" name="join_course" >
+                            <option value="0" style="color: rgb(49, 48, 48);">select the course</option>
+                            {% for course in courses %}
+                            <option value="{{course.id}}" style="color: rgb(49, 48, 48);">{{course.course_name}}</option>
+                            {% endfor %}
+                        </select>
+                        <select class="newsletter__input" name="join_course_type" required >
+                            <option value="0" style="color: rgb(49, 48, 48);">select the course Duration</option>
+                            <option value="1" style="color: rgb(49, 48, 48);">Short Team Internship</option>
+                            <option value="2" style="color: rgb(49, 48, 48);">Internship</option>
+                            <option value="3" style="color: rgb(49, 48, 48);">On Job Training</option>
+                        </select>
+                        <input type="text" name="join_desig" placeholder="Enter your designation" class="newsletter__input" >
+                        
+                        <textarea class="newsletter__input" name="join_message"  placeholder="Enter your message" ></textarea>
+                       
+                        <button class="button xmas-button" type="submit">
+                            JOIN
+                        </button>
+                    </form>
+
+                    
+                </div>
+                
+            </section>        
+
+            <!--==================== STORY ====================-->
+            <section class="story section container">
+                <div class="story__container grid pt-1">
+                    <div class="story__data">
+    
+                        <!-- <h1 class="story__title">
+                            WELCOME TO <br> ALTOS EDUHUB 
+                        </h1> -->
+    
+                        <p class="home__description text-white">
+                            Altos Eduhub is the best software training institute in Kochi, Kerala, 
+                            owned by Altos Technologies, a leading software development company in Kerala. 
+                            We offer top-notch training programs in Python, Front End Development, Digital Marketing, 
+                            React JS, and REST API. Our institute provides on-the-job training to ensure that learners 
+                            gain practical experience and are job-ready.
+                        </p>
+                        <div class="hidden-about-image" style="display: none;">
+                            <img src="{% static 'img/bg7.jpg' %}" alt="" class="hidden-about-img">
+                        </div>
+                        <a href="https://www.altoseduhub.com/About" target="_blank" class="button button--small xmas-button" style="text-decoration: none; color: white;">Discover</a>
+                    </div>
+
+                    <div class="story__images" >
+                        <img src="{% static 'img/bg7.jpg' %}" alt="" class="story__img">
+                        <div class="story__square" ></div>
+                    </div>
+                </div>
+            </section>            
+
+            <!--==================== SUPPORT ====================-->
+            <section class="newsletter section_suport container">
+                <h2 class="section__title">
+                    Our support
+                </h2>
+                <div class="support_bg support " id="card-container">
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <i class='bx bxs-graduation'></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h3>
+                                    <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">Skilled Instructors</a>
+                                </h3>
+                                <p>Our instructors are industry experts committed to providing up-to-date training to learners.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <i class='bx bx-globe'></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h3>
+                                    <a href="#">Online Classes</a>
+                                </h3>
+                                <p>Our online classes offer learners the convenience of studying from anywhere, at any time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <i class='bx bx-support'></i>
+                                   
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h3>
+                                    <a href="#">Placement Assistance</a>
+                                </h3>
+                                <p>We provide learners with career guidance and support, helping them to secure a fulfilling career in the software industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </section>
+
+
+
+            <!--==================== COUNT ====================-->
+
+            <section class="newsletter section container"  id="counter">
+                <div class="newsletter__bg grid">
+                    <div>
+                        <h2 class="newsletter__title">We Take Pride in  <br> Our Numbers</h2>
+                        <p class="newsletter__description">
+                            Discover our impressive track record with countless successful placements, 
+                            extensive years of experience, a wide range of facilities, and a diverse selection of courses. 
+                            Explore our achievements and expertise in one place.
+                        </p>
+                    </div>
+
+                    <div class="number_counter_box" >
+                       <div class="card" >
+                        <div class="card_cont">
+                            <p><span class="counters" data-count="10">10</span></p>
+                            <span class="count_head">Experience</span>
+                         
+                        </div>
+                       </div>
+                       <div class="card">
+                        <div class="card_cont">
+                            <p><span class="counters" data-count="500">500</span></p>
+                            <span class="count_head"> Placements</span>
+                        </div>
+                       </div>
+                       <div class="card">
+                        
+                        <div class="card_cont">
+                            <p><span class="counters"  data-count="100">100</span></p>
+                            <span class="count_head">Faculties</span>
+                        </div>
+                       </div>
+                       <div class="card">
+                     
+                        <div class="card_cont">
+                            <p><span class="counters"  data-count="50">50</span></p>
+                            <span class="count_head">Courses</span>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section" style="background-color: #1f1f1f;">
+            <span class="footer__copy text-white">{% now "Y" %} &#169; AltosTechnologies. All rigths reserved</span>
+        </footer>
+    
+
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+        </a>
+        <a href="https://wa.me/919074156818" class="scrollwh" id="scroll-wh"> 
+           
+            <i class='bx bxl-whatsapp scrollwh__icon' ></i>
+        </a>
+
+      
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="static/js/swiper-bundle.min.js"></script>
+
+       
+
+        <!--=============== MAIN JS ===============-->
+        <script src="static/js/main.js"></script>
+        <script src="static/js/index.js"></script>
+        <script src="static/js/chat.js"></script>
+
+   
+
+         <!--===============PARALLS JS ===============-->
+       
+         <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+         <script type="text/javascript" src="//use.typekit.net/rws3een.js"></script>
+         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+        
+        
+    </body>
+</html>
