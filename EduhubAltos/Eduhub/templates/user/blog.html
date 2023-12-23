@@ -31,6 +31,9 @@
        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+       <link href="{% static 'css/snow.css' %}" rel="stylesheet" >
+       <script src="{% static 'js/snow.js' %}"></script>
    
    </head>
 
@@ -42,9 +45,31 @@
     .nav__link:hover{
         font-size: large;
     }
+
+    .xmas-button{
+        font-size: 1em;
+        padding: 1em;
+        /* background: #29d5e5c9; */
+        background: linear-gradient(
+            45deg,
+            #840000,
+            rgb(187, 0, 0),
+            #5c0404 100%
+            );
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .xmas_text{
+        color: white;
+        text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.797);
+    }
    </style>
 
    <body>
+        <div class="snow-container" style="z-index: 1;"></div>
        <!--==================== HEADER ====================-->
        <header class="header" id="header" >
         <div class="position-relative" style="z-index: 1;" >
@@ -285,19 +310,12 @@
                 padding: 0.8em 1.5em 0.8em 1.2em;
                 color: white;
                 background: #ad5389;
-                background: linear-gradient(0deg, rgba(77,54,208,1) 0%, rgba(132,116,254,1) 100%);
                 border: none;
-                box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
                 letter-spacing: 0.05em;
                 border-radius: 20em;
             }
-            .call__button a:hover {
-                box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
-              }
-              
-              .call__button a:active {
-                box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
-              }
+
+
                 .call__right
                 {
                     background: #ffd723;
@@ -404,7 +422,11 @@
                     }
                 }
 
-
+        
+    .xmas_text_alt{
+        color: white;
+        text-shadow: 3px 3px 10px rgba(38, 138, 5, 0.797);
+    }
        </style>
        
       
@@ -418,7 +440,7 @@
         <section class="blog__section section">
 
             <div class="blog__container container">
-                <h1 class="blog__head text-center">
+                <h1 class="blog__head text-center xmas_text">
                     The Life-Changing Benefits of On-The-Job Training for Students
                 </h1>
                 <p class="text-light">
@@ -471,7 +493,7 @@
             <div class="content__container container">
 
                 <div class="contentBox">
-                    <h2>What is On-The-Job Training</h2>
+                    <h2 class="xmas_text">What is On-The-Job Training</h2>
                     <p class="text-light">
                         On-the-job training refers to the process of learning and acquiring skills while working in a
                         professional setting. It allows students to apply their theoretical knowledge in real-world
@@ -480,7 +502,7 @@
                         professionals who serve as mentors.
                     </p>
                    
-                    <h2>The Life-Changing Benefits of On-The-Job Training for Students</h2>
+                    <h2 class="xmas_text">The Life-Changing Benefits of On-The-Job Training for Students</h2>
                     <p class="text-light">
                         Learn about the transforming effect of on-the-job training, which combines classroom
                         instruction with practical experience. Real-world instruction can help you reach your full
@@ -493,7 +515,7 @@
                     </p>
                     <div class="benifit__Box">
                         <div class="benift__item">
-                            <h3>1. Acquiring Practical Skills</h3>
+                            <h3 class="xmas_text_alt">1. Acquiring Practical Skills</h3>
                             <p class="text-light">
                                 One of the primary benefits of on-the-job training is the acquisition of practical skills. Unlike
                                 traditional classroom learning, OJT enables students to put their knowledge into practice,
@@ -501,7 +523,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>2. Building a Professional Network</h3>
+                            <h3 class="xmas_text_alt">2. Building a Professional Network</h3>
                             <p class="text-light">
 
                                 During on-the-job training, students have the opportunity to interact with professionals in
@@ -514,7 +536,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>3. Gaining Real-World Experience</h3>
+                            <h3 class="xmas_text_alt">3. Gaining Real-World Experience</h3>
                             <p class="text-light">
                                 On-the-job training provides students with a glimpse into the real world of work. It exposes
                                 them to the challenges, dynamics, and intricacies of their chosen industry. Students learn
@@ -524,7 +546,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>4. Developing Confidence and Adaptability</h3>
+                            <h3 class="xmas_text_alt">4. Developing Confidence and Adaptability</h3>
                             <p class="text-light">
                                 Through on-the-job training, students develop a sense of confidence in their abilities. As
                                 they successfully tackle tasks and gain proficiency, their self-assurance grows. Additionally,
@@ -534,7 +556,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>5. Exploring Career Paths</h3>
+                            <h3 class="xmas_text_alt">5. Exploring Career Paths</h3>
                             <p class="text-light">
                                 OJT provides students with a firsthand experience of various career paths within their
                                 chosen field. By working alongside professionals in different roles, students gain insights
@@ -544,7 +566,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>6. Enhancing Employability</h3>
+                            <h3 class="xmas_text_alt">6. Enhancing Employability</h3>
                             <p class="text-light">
                                 Employers often prioritize practical experience when hiring new graduates. On-the-job
                                 training significantly enhances students' employability by demonstrating their ability to
@@ -554,7 +576,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>7. Fostering Personal Growth</h3>
+                            <h3 class="xmas_text_alt">7. Fostering Personal Growth</h3>
                             <p class="text-light">
                                 On-the-job training is not only about professional development but also personal growth.
                                 Students encounter diverse work environments, cultures, and perspectives, broadening
@@ -564,7 +586,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>8. Improving Communication Skills</h3>
+                            <h3 class="xmas_text_alt">8. Improving Communication Skills</h3>
                             <p class="text-light">
                                 Effective communication is a vital skill in the workplace. On-the-job training provides
                                 students with ample opportunities to enhance their communication skills. They learn to
@@ -574,7 +596,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>9. Experiencing Industry Trends</h3>
+                            <h3 class="xmas_text_alt">9. Experiencing Industry Trends</h3>
                             <p class="text-light">
                                 By engaging in on-the-job training, students gain firsthand exposure to industry trends and
                                 innovations. They witness how professionals in their field adapt to technological
@@ -584,7 +606,7 @@
                             </p>  
                         </div>
                         <div class="benift__item">
-                            <h3>10. Promoting Self-Discovery</h3>
+                            <h3 class="xmas_text_alt">10. Promoting Self-Discovery</h3>
                             <p class="text-light">
                                 On-the-job training is a journey of self-discovery for students. It allows them to explore
                                 their strengths, weaknesses, and areas of interest. Through exposure to different roles and
@@ -594,7 +616,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>11. Encouraging Lifelong Learning</h3>
+                            <h3 class="xmas_text_alt">11. Encouraging Lifelong Learning</h3>
                             <p class="text-light">
                                 On-the-job training instills a sense of curiosity and a desire for lifelong learning. Students
                                 witness the importance of continuous professional development and the need to adapt to
@@ -603,7 +625,7 @@
                             </p>
                         </div>
                         <div class="benift__item">
-                            <h3>12. Overcoming Challenges and Building Resilience</h3>
+                            <h3 class="xmas_text_alt">12. Overcoming Challenges and Building Resilience</h3>
                             <p class="text-light">
                                 On-the-job training exposes students to real-world challenges and obstacles. They learn to
                                 persevere, problem-solve, and handle setbacks. By overcoming these challenges, students
@@ -614,7 +636,7 @@
 
                     </div>
                     
-                    <h3>Conclusion</h3>
+                    <h3 class="xmas_text_alt">Conclusion</h3>
                     <p class="text-light">
                         On-the-job training offers students a transformative experience that goes beyond
                         theoretical learning. It equips them with practical skills, industry insights, and a network of
@@ -628,7 +650,7 @@
 
             <div class="call__action container ">
                 <div class="call__left">
-                    <h2>Call to Action</h2>
+                    <h2 class="xmas_text">Call to Action</h2>
                     
                     <p class="text-light">
                         Ready to take your career to the next level? Enroll in our comprehensive on-the-job training
@@ -640,8 +662,8 @@
                         market. Visit our website or contact us to secure your spot in our life-changing on-the-job
                         training program. Your future success starts here!
                     </p>
-                    <div class="call__button">
-                        <a href="{% url 'CoursePage' %}">Check Out</a>
+                    <div >
+                        <a href="{% url 'CoursePage' %}" class="xmas-button" style="text-decoration: none; color: white;">Check Out</a>
                     </div>
                 </div>
                 <div class="call__right">
@@ -654,7 +676,7 @@
             
             <div class="faq container" aria-level="Frequently Asked Questions">
                 <header class="faq_header">
-                    <h2 class="faq_header-title">Frequently Asked Questions</h2>
+                    <h2 class="faq_header-title xmas_text">Frequently Asked Questions</h2>
                 </header>
                <div class="faq__body">
                    <details aria-expanded="true" class="faq__panel" open>
@@ -708,10 +730,48 @@
 
         </section>
             
-       </main>
+     
+        <br><br>
+    </main>
+    
+
+    <div class="position-relative" style="z-index: 1;" style="margin-top: 10vh;">
+        <div class="position-absolute">
+          <div class="d-flex" style="overflow-x: hidden;">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            
+          </div>
+        </div>
+      </div>
+
 
        <!--==================== FOOTER ====================-->
        <footer class="footer section" style="background-color: #1f1f1f;">
+        <br> <br>
            <div class="footer__container container grid">
                <div class="footer__content">
                    <h3 class="footer__title ">ALTOS EDUHUB</h3>

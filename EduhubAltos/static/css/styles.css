@@ -1621,7 +1621,6 @@ padding-left: 0.80rem;
 .support_bg
 {
   /* background-color:var(--border-color); */
-  padding: 1rem 1.5rem;
   padding-bottom: 3rem;
   text-align: center;
   row-gap: 2.5rem;
@@ -1634,11 +1633,13 @@ padding-left: 0.80rem;
   justify-content:space-evenly;
   gap: 1.3em;
   height: 320px;
+  margin-left: 5vh;
 }
 
 .support .card {
   position: relative;
   border-radius: 20px;
+  margin-right: 5vh;
   background:var(--container-color);
 
 }

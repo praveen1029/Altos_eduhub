@@ -31,6 +31,9 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link href="{% static 'css/snow.css' %}" rel="stylesheet" >
+        <script src="{% static 'js/snow.js' %}"></script>
     </head>
 
     <body>
@@ -92,7 +95,23 @@
                 text-decoration: none;
                 color: white;
             }
+
+            .xmas_text{
+                color: white;
+                text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.797);
+            }
+
+            .xmas_silk_gif{
+                margin-left: 25%;
+                transform: rotate(35deg);
+            }
+
+            .red_top_top{
+                margin-left: -2rem;
+                margin-top: -1rem;
+            }
         </style>
+        <div class="snow-container" style="z-index: 1;"></div>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <div class="position-relative" style="z-index: 1;" >
@@ -233,10 +252,16 @@
         <!--==================== MAIN ====================-->
         <main class="main" style="background-color: #1f1f1f;">
             <!--==================== HOME ====================-->
-            <section class="home" id="home" style="background-image: url('static/img/bgr3.jpg'); background-size:cover;">
+            <section class="home" id="home" style="background-image: url('static/xmas/decor/xmas_black.png'); background-size:cover;">
                 <div class="home__container container grid">
-                    <div class="home__img-bg " >
-                        <img src="static/img/home_inner.png" alt="" class="home__inner__img">
+                    
+                    <div class="home__img-bg " > 
+                        <div class="position-absolute">
+                            <img class="xmas_silk_gif" width="150rem" draggable="false" src="{% static 'xmas/gifs/xmas-silk.gif' %}" alt="">
+                            <img src="static/img/home_inner.png" alt="" class="home__inner__img">
+                        </div>
+                        
+                        <img src="static/xmas/decor/santa-thumbsup.png" alt="" class="home__inner__img" style="margin-left: 50%; width: 60%;">
                     </div>
     
                     <div class="home__social text-white mt-5">
@@ -253,12 +278,13 @@
     
     
                     <div class="home__data" >
-                        <h1 class="home__title">Best Software Training <br> Institute of Kerala </h1>
+                        <h1 class="home__title xmas_text">Best Software Training <br> Institute of Kerala </h1>
                         <p class="home__description1 ">
                             <span>Enhance Your Skills with Top-Rated Software Courses in Kochi</span>
                             <span>Empowering Your Tech Career with Expert Guidance.</span>
                             
                         </p>
+                        <img src="{% static 'xmas/decor/big_present.png' %}" alt="" width="75%" style="margin-left: 10%;">
                         
                         <!-- <div class="home__btns">
                             <a href="{% url 'CoursePage' %}#offered-courses" class="button button--gray button--small">
@@ -279,12 +305,17 @@
 
             <!--==================== FEATURED ====================-->
             <section class="featured section container" id="featured">
-                <h2 class="section__title">
+                <h2 class="section__title xmas_text">
                     Secure Your IT Future
                 </h2>
 
                 <div class="featured__container grid">
                     <article class="featured__card">
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-top.png' %}" alt="" style="height: 15vh">
+                            </div>
+                        </div>
                         <span class="featured__tag"></span>
 
                         <img src="{% static 'img/jumpcarrer.jpg' %}" alt="Jumpstart Your IT Career" class="featured__img">
@@ -294,11 +325,23 @@
                             <span class="featured__price"></span>
                         </div>
                        
+
                         <a href="https://www.altoseduhub.com/Jumpstart-Your-IT-Career" target="_blank" class="button featured__button xmas-button">Explore</a>
                         <!-- <button class="button featured__button">Explore</button> -->
+                        <br><br>
+                        <div class="position-relative featured__button" style="z-index: 1; margin-bottom: -11%;">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-bottom.png' %}" alt="">
+                            </div>
+                        </div>
                     </article>
 
                     <article class="featured__card">
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-top.png' %}" alt=""style="height: 15vh">
+                            </div>
+                        </div>
                         <span class="featured__tag"></span>
 
                         <img src="{% static 'img/transit.jpg' %}" alt="Transitioning to IT" class="featured__img">
@@ -309,9 +352,20 @@
                         </div>
 
                         <a href="https://www.altoseduhub.com/Transitioning-to-IT" target="_blank" class="button featured__button xmas-button">Explore</a>
+                        <br><br>
+                        <div class="position-relative featured__button" style="z-index: 1; margin-bottom: -11%;">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-bottom.png' %}" alt="">
+                            </div>
+                        </div>
                     </article>
 
                     <article class="featured__card">
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-top.png' %}" alt="" style="height: 15vh">
+                            </div>
+                        </div>
                         <span class="featured__tag"></span>
 
                         <img src="{% static 'img/brigeup.jpg' %}" alt="Bridging the Gap" class="featured__img">
@@ -322,6 +376,12 @@
                         </div>
 
                         <a href="https://www.altoseduhub.com/Bridging-the-Gap" target="_blank" class="button featured__button xmas-button">Explore</a>
+                        <br><br>
+                        <div class="position-relative featured__button" style="z-index: 1; margin-bottom: -11%;">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-bottom.png' %}" alt="">
+                            </div>
+                        </div>
                     </article>
                     
 
@@ -343,7 +403,7 @@
 
             <!--==================== NEW ====================-->
             <section class="new section container" id="new">
-                <h2 class="section__title">
+                <h2 class="section__title xmas_text">
                     Popular Courses
                 </h2>
                 
@@ -351,6 +411,11 @@
                     <div class="swiper new-swiper">
                         <div class="swiper-wrapper">
                             <article class="new__card swiper-slide">
+                                <div class="position-relative" style="z-index: 1; ">
+                                    <div class="position-absolute red_top_top" style="margin-top: -5vh; margin-left: -30%;">
+                                      <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" width="55%">
+                                    </div>
+                                </div>
                                 <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
                                 <img src="/media/img/courses/python.webp" alt="Python" class="new__img">
         
@@ -364,6 +429,11 @@
                                 </a>                        
                             </article>
                             <article class="new__card swiper-slide">
+                                <div class="position-relative" style="z-index: 1; ">
+                                    <div class="position-absolute red_top_top" style="margin-top: -5vh;  margin-left: -30%;">
+                                      <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" width="55%">
+                                    </div>
+                                </div>
                                 <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
                                 <img src="/media/img/courses/mlearn.jpg" alt="Machine Learning" class="new__img">
         
@@ -377,6 +447,11 @@
                                 </a>                        
                             </article>
                             <article class="new__card swiper-slide">
+                                <div class="position-relative" style="z-index: 1; ">
+                                    <div class="position-absolute red_top_top" style="margin-top: -5vh;  margin-left: -30%;">
+                                      <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" width="55%">
+                                    </div>
+                                </div>
                                 <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
                                 <img src="/media/img/courses/Benefits-of-ReactJS.jpg" alt="ReactJS" class="new__img">
         
@@ -391,6 +466,11 @@
                             </article>
                             
                             <article class="new__card swiper-slide">
+                                <div class="position-relative" style="z-index: 1; ">
+                                    <div class="position-absolute red_top_top" style="margin-top: -5vh;  margin-left: -30%;">
+                                      <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" width="55%">
+                                    </div>
+                                </div>
                                 <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
                                 <img src="/media/img/courses/java.webp" alt="Java" class="new__img">
         
@@ -404,6 +484,11 @@
                                 </a>                        
                             </article>
                             <article class="new__card swiper-slide">
+                                <div class="position-relative" style="z-index: 1; ">
+                                    <div class="position-absolute red_top_top" style="margin-top: -5vh;  margin-left: -30%;">
+                                      <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" width="55%">
+                                    </div>
+                                </div>
                                 <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
                                 <img src="/media/img/courses/Angular-JS.jpg" alt="Angular-JS" class="new__img">
         
@@ -417,6 +502,11 @@
                                 </a>                        
                             </article>
                             <article class="new__card swiper-slide">
+                                <div class="position-relative" style="z-index: 1; ">
+                                    <div class="position-absolute red_top_top" style="margin-top: -5vh;  margin-left: -30%;">
+                                      <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" width="55%">
+                                    </div>
+                                </div>
                                 <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
                                 <img src="/media/img/courses/md.webp" alt="ml&ds" class="new__img">
         
@@ -430,6 +520,11 @@
                                 </a>                        
                             </article>
                             <article class="new__card swiper-slide">
+                                <div class="position-relative" style="z-index: 1; ">
+                                    <div class="position-absolute red_top_top" style="margin-top: -5vh;  margin-left: -30%;">
+                                      <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" width="55%">
+                                    </div>
+                                </div>
                                 <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
                                 <img src="/media/img/courses/pd.jpg" alt="Python Django" class="new__img">
         
@@ -448,12 +543,14 @@
             </section>
 
             
-            <section class="newsletter section container mb-4" id="second-section" style="text-align: center;">
-                <h4 class="home__title">Explore Your Future With Us </h4>
-                <div class="newsletter__bg grid">
+            <section class="newsletter section container mb-4" id="second-section">
+
+                <h4 class="home__title xmas_text text-center">Explore Your Future With Us </h4>
+                <div class="newsletter__bg grid" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                     <div>
+                        <img src="{% static 'xmas/decor/cycle_santa.png' %}" alt="" width="75%" style="margin-left: 10%;">
                         <h2 class="newsletter__title"> Fill Your Details<br> </h2>
-                        <p class="newsletter__description">
+                        <p class="newsletter__description" style="color: black;">
                             To get in touch with us, simply fill out the contact form on this page or email us 
                             at info@Altostechnologies.in . Our team will get back to you as soon as possible to address your inquiry.
                         </p>
@@ -504,7 +601,7 @@
 
             <!--==================== STORY ====================-->
             <section class="story section container">
-                <div class="story__container grid pt-1">
+                <div class="story__container grid pt-1 ml-1 mr-1">
                     <div class="story__data">
     
                         <!-- <h1 class="story__title">
@@ -525,6 +622,11 @@
                     </div>
 
                     <div class="story__images" >
+                        <div class="position-relative" style="z-index: 1;">
+                            <div class="position-absolute end-0 santa_peek22_top">
+                              <img id="santa_peek22" draggable="false" src="{% static 'xmas/decor/xmaspap_peek.png' %}" alt="" style="margin-left: -15%;">
+                            </div>
+                          </div>
                         <img src="{% static 'img/bg7.jpg' %}" alt="" class="story__img">
                         <div class="story__square" ></div>
                     </div>
@@ -533,11 +635,16 @@
 
             <!--==================== SUPPORT ====================-->
             <section class="newsletter section_suport container">
-                <h2 class="section__title">
+                <h2 class="section__title xmas_text">
                     Our support
                 </h2>
                 <div class="support_bg support " id="card-container">
                     <div class="card">
+                        <div class="position-relative" style="z-index: 99; width: 75%; margin-top: 5%; margin-left: 10%;">
+                            <div class="position-absolute red_top_top">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/blue_ribbon_top.png' %}" alt="">
+                            </div>
+                        </div>
                         <div class="face face1">
                             <div class="content">
                                 <div class="icon">
@@ -545,33 +652,43 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="face face2">
+                        <div class="face face2" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                             <div class="content">
                                 <h3>
-                                    <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">Skilled Instructors</a>
+                                    <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank" style="text-decoration: none; color: #1f1f1f;">Skilled Instructors</a>
                                 </h3>
-                                <p>Our instructors are industry experts committed to providing up-to-date training to learners.</p>
+                                <p style="color: black;">Our instructors are industry experts committed to providing up-to-date training to learners.</p>
                             </div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="face face1">
+                        <div class="position-relative" style="z-index: 99; width: 75%; margin-top: 5%; margin-left: 10%;">
+                            <div class="position-absolute red_top_top">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/blue_ribbon_top.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="face face1" >
                             <div class="content">
                                 <div class="icon">
                                     <i class='bx bx-globe'></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="face face2">
+                        <div class="face face2" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                             <div class="content">
                                 <h3>
-                                    <a href="#">Online Classes</a>
+                                    <a href="#" style="text-decoration: none; color: #1f1f1f;">Online Classes</a>
                                 </h3>
-                                <p>Our online classes offer learners the convenience of studying from anywhere, at any time.</p>
+                                <p style="color: black;">Our online classes offer learners the convenience of studying from anywhere, at any time.</p>
                             </div>
                         </div>
                     </div>
                     <div class="card">
+                        <div class="position-relative" style="z-index: 99; width: 75%; margin-top: 5%; margin-left: 10%;">
+                            <div class="position-absolute red_top_top">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/blue_ribbon_top.png' %}" alt="">
+                            </div>
+                        </div>
                         <div class="face face1">
                             <div class="content">
                                 <div class="icon">
@@ -581,12 +698,12 @@
                                 
                             </div>
                         </div>
-                        <div class="face face2">
+                        <div class="face face2" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                             <div class="content">
                                 <h3>
-                                    <a href="#">Placement Assistance</a>
+                                    <a href="#" style="text-decoration: none; color: #1f1f1f;">Placement Assistance</a>
                                 </h3>
-                                <p>We provide learners with career guidance and support, helping them to secure a fulfilling career in the software industry.</p>
+                                <p style="color: black;">We provide learners with career guidance and support, helping them to secure a fulfilling career in the software industry.</p>
                             </div>
                         </div>
                     </div>
@@ -600,10 +717,15 @@
             <!--==================== COUNT ====================-->
 
             <section class="newsletter section container"  id="counter">
-                <div class="newsletter__bg grid">
+                <div class="position-relative" style="z-index: 1;" style="height: 25%;"> 
+                    <div class="position-absolute end-0 santa_peek22_top" style="height: 25%;">
+                      <img id="santa_peek22" draggable="false" src="{% static 'xmas/decor/candy_Cane.png' %}" alt="" style="width: 32%; margin-top: -2%; margin-left: -11%;">
+                    </div>
+                </div>
+                <div class="newsletter__bg grid" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                     <div>
                         <h2 class="newsletter__title">We Take Pride in  <br> Our Numbers</h2>
-                        <p class="newsletter__description">
+                        <p class="newsletter__description" style="color: black;">
                             Discover our impressive track record with countless successful placements, 
                             extensive years of experience, a wide range of facilities, and a diverse selection of courses. 
                             Explore our achievements and expertise in one place.
@@ -611,38 +733,75 @@
                     </div>
 
                     <div class="number_counter_box" >
-                       <div class="card" >
+                        <div class="card" >
                         <div class="card_cont">
                             <p><span class="counters" data-count="10">10</span></p>
                             <span class="count_head">Experience</span>
-                         
+                            
                         </div>
-                       </div>
-                       <div class="card">
+                        </div>
+                        <div class="card">
                         <div class="card_cont">
                             <p><span class="counters" data-count="500">500</span></p>
                             <span class="count_head"> Placements</span>
                         </div>
-                       </div>
-                       <div class="card">
+                        </div>
+                        <div class="card">
                         
                         <div class="card_cont">
                             <p><span class="counters"  data-count="100">100</span></p>
                             <span class="count_head">Faculties</span>
                         </div>
-                       </div>
-                       <div class="card">
-                     
+                        </div>
+                        <div class="card">
+                        
                         <div class="card_cont">
                             <p><span class="counters"  data-count="50">50</span></p>
                             <span class="count_head">Courses</span>
                         </div>
-                       </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
+         
+            <br><br>
         </main>
+        
+
+        <div class="position-relative" style="z-index: 1;" style="margin-top: 10vh;">
+            <div class="position-absolute">
+              <div class="d-flex" style="overflow-x: hidden;">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                
+              </div>
+            </div>
+          </div>
+
 
         <!--==================== FOOTER ====================-->
         <footer class="footer section" style="background-color: #1f1f1f;">

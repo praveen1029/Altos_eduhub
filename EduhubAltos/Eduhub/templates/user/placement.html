@@ -31,6 +31,9 @@
        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+       <link href="{% static 'css/snow.css' %}" rel="stylesheet" >
+       <script src="{% static 'js/snow.js' %}"></script>
    </head>
 
    <style>
@@ -41,9 +44,31 @@
     .nav__link:hover{
         font-size: large;
     }
+
+    .xmas-button{
+        font-size: 1em;
+        padding: 1em;
+        /* background: #29d5e5c9; */
+        background: linear-gradient(
+            45deg,
+            #840000,
+            rgb(187, 0, 0),
+            #5c0404 100%
+            );
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .xmas_text{
+        color: white;
+        text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.797);
+    }
    </style>
 
    <body>
+        <div class="snow-container" style="z-index: 1;"></div>
         <!--==================== HEADER ====================-->
         <header class="header" id="header" >
             <div class="position-relative" style="z-index: 1;" >
@@ -169,7 +194,7 @@
         
         
                         <div class="home__data">
-                            <h1 class="home__title">PLACEMENTS  <br> TAKE THE NEXT STEP</h1>
+                            <h1 class="home__title xmas_text">PLACEMENTS  <br> TAKE THE NEXT STEP</h1>
                             <p class="home__description text-light">
                                 At Altos Eduhub, we take immense pride in the success of our students. 
                                 With a strong focus on skill-building and practical experience, our training programs 
@@ -182,7 +207,7 @@
                             <!-- <span class="home__price">$1245</span> -->
     
                             <div class="home__btns">
-                                <a href="#products" class="button button--gray button--small">
+                                <a href="#products" class="button button--gray button--small xmas-button" style="text-decoration: none; color: white;">
                                     PLACEMENT
                                 </a>
     
@@ -196,13 +221,19 @@
 
              <!--==================== PRODUCTS ====================-->
              <section class="products section container" id="products">
-                <h2 class="section__title">
+                <h2 class="section__title xmas_text">
                     Students Placed In 
                 </h2>
 
                 <div class="products__container grid">
                     {% for pla in placement %}
                     <article class="products__card">
+                        
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh; margin-left: -30%;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" style="width: 55%;">
+                            </div>
+                        </div>
                         {% if pla.image %}
                         <img src="{{pla.image.url}}" alt="{{pla.plaalttag}}" class="products__img">
                         {% endif %}
@@ -211,7 +242,7 @@
                         <span class="products__price">{{pla.company}}</span>
 
                         <button class="products__button">
-                            <i class='bx bx-heart' ></i>
+                            <i class='bx bx-heart xmas-button'style="text-decoration: none; color: white;" ></i>
                         </button>
                     </article>
                     {% endfor %}
@@ -222,9 +253,43 @@
 
 
                 
-    
-
+     
+            <br><br>
         </main>
+        
+
+        <div class="position-relative" style="z-index: 1;" style="margin-top: 10vh;">
+            <div class="position-absolute">
+              <div class="d-flex" style="overflow-x: hidden;">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                
+              </div>
+            </div>
+          </div>
 
   
 

@@ -26,6 +26,9 @@
        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+       <link href="{% static 'css/snow.css' %}" rel="stylesheet" >
+       <script src="{% static 'js/snow.js' %}"></script>
    </head>
 
    <style>
@@ -36,9 +39,31 @@
     .nav__link:hover{
         font-size: large;
     }
+
+    .xmas-button{
+        font-size: 1em;
+        padding: 1em;
+        /* background: #29d5e5c9; */
+        background: linear-gradient(
+            45deg,
+            #840000,
+            rgb(187, 0, 0),
+            #5c0404 100%
+            );
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .xmas_text{
+        color: white;
+        text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.797);
+    }
    </style>
 
    <body>
+        <div class="snow-container" style="z-index: 1;"></div>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <div class="position-relative" style="z-index: 1;" >
@@ -165,14 +190,14 @@
         
         
                         <div class="home__data">
-                            <h1 class="home__title"> Restart Your <br> IT Career </h1>
-                            <p class="home__description text-light">
+                            <h1 class="home__title xmas_text"> Restart Your <br> IT Career </h1>
+                            <p class="home__description text-light ">
                                 Boost Your IT Career with our Job-Focused Training Program for Experienced Learners!
                             </p>
                             <!-- <span class="home__price">$1245</span> -->
     
                             <div class="home__btns">
-                                <a href="#second-section" class="button button--gray button--small">
+                                <a href="#second-section" class="button button--gray button--small xmas-button" style="text-decoration: none; color: white;">
                                     Explore
                                 </a>
     
@@ -186,7 +211,7 @@
                  <section class="story section container" id="second-section">
                     <div class="story__container grid">
                         <div class="story__data">
-                            <h2 class="section__title story__section-title">
+                            <h2 class="section__title story__section-title xmas_text">
                                  We Provide
                             </h2>
                            
@@ -202,7 +227,7 @@
                                 </ul>
                               
         
-                            <a href="{% url 'EnquirForm' %}" class="button button--small">ENQUIRE NOW </a>
+                            <a href="{% url 'EnquirForm' %}" class="button button--small xmas-button" style="text-decoration: none; color: white;">ENQUIRE NOW </a>
                         </div>
 
                         <div class="story__images">
@@ -212,10 +237,44 @@
                     </div>
                 </section>
 
-     
-        </main>
 
+ 
+        <br><br>
     </main>
+    
+
+    <div class="position-relative" style="z-index: 1;" style="margin-top: 10vh;">
+        <div class="position-absolute">
+          <div class="d-flex" style="overflow-x: hidden;">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+            
+          </div>
+        </div>
+      </div>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer section" style="background-color: #1f1f1f;">

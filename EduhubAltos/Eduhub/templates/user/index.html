@@ -32,6 +32,9 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
+        <link href="{% static 'css/snow.css' %}" rel="stylesheet" >
+        <script src="{% static 'js/snow.js' %}"></script>
+
     </head>
 
     <style>
@@ -45,23 +48,44 @@
 
         
         .xmas-button{
-                font-size: 1em;
-                padding: 1em;
-                /* background: #29d5e5c9; */
-                background: linear-gradient(
-                    45deg,
-                    #840000,
-                    rgb(187, 0, 0),
-                    #5c0404 100%
-                    );
-                font-weight: 600;
-                text-transform: uppercase;
-                border: none;
-                border-radius: 4px;
-            }
+            font-size: 1em;
+            padding: 1em;
+            /* background: #29d5e5c9; */
+            background: linear-gradient(
+                45deg,
+                #840000,
+                rgb(187, 0, 0),
+                #5c0404 100%
+                );
+            font-weight: 600;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .xmas_text{
+            color: white;
+            text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.797);
+        }
+
+        .xmas_text_alt{
+            color: white;
+            text-shadow: 3px 3px 10px rgba(38, 138, 5, 0.797);
+        }
+
+        .xmas_silk_gif{
+            margin-left: 25%;
+            transform: rotate(35deg);
+        }
+
+        .red_top_top{
+            margin-left: -2rem;
+            margin-top: -1rem;
+        }
     </style>
 
     <body>
+        <div class="snow-container" style="z-index: 1;"></div>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <div class="position-relative" style="z-index: 1;" >
@@ -203,14 +227,21 @@
         <!--==================== MAIN ====================-->
         <main class="main" style="background-color: #1f1f1f;">
             <!--==================== HOME ====================-->
-            <section class="home" id="home" style="background-image: url('static/img/bgr3.jpg'); background-size:cover;">
+
+            <section class="home" id="home" style="background-image: url('static/xmas/decor/xmas_black.png'); background-size:cover;">
                 <div class="home__container container grid">
-                    <div class="home__img-bg" >
-                        <img src="static/img/home_inner.png" alt="" class="home__inner__img">
+                    
+                    <div class="home__img-bg " > 
+                        <div class="position-absolute">
+                            <img class="xmas_silk_gif" width="150rem" draggable="false" src="{% static 'xmas/gifs/xmas-silk.gif' %}" alt="">
+                            <img src="static/img/home_inner.png" alt="" class="home__inner__img">
+                        </div>
+                        
+                        <img src="static/xmas/decor/santa-thumbsup.png" alt="" class="home__inner__img" style="margin-left: 50%; width: 60%;">
                     </div>
     
                     <div class="home__social text-white mt-5">
-                        <a href="https://www.facebook.com/people/ALTOS-Technologies/100084886970426/" target="_blank" class="home__social-link ">
+                        <a href="https://www.facebook.com/people/ALTOS-Technologies/100084886970426/" target="_blank" class="home__social-link">
                             Facebook
                         </a>
                         <a href="https://wa.me/919074156818" target="_blank" class="home__social-link">
@@ -223,12 +254,13 @@
     
     
                     <div class="home__data" >
-                        <h1 class="home__title">Best Software Training <br> Institute of Kerala </h1>
+                        <h1 class="home__title xmas_text">Best Software Training <br> Institute of Kerala </h1>
                         <p class="home__description1 ">
                             <span>Enhance Your Skills with Top-Rated Software Courses in Kochi</span>
                             <span>Empowering Your Tech Career with Expert Guidance.</span>
                             
                         </p>
+                        
                         
                         <div class="home__btns">
                             <a href="{% url 'CoursePage' %}#offered-courses" class="button button--gray xmas-button" style="text-decoration: none; color: white;">
@@ -242,15 +274,16 @@
                 </div>
             </section>
             
+            
         
             <!--==================== STORY ====================-->
             <section class="story section container">
                 <div class="story__container grid">
                     <div class="story__data">
-                        <h2 class="section__title story__section-title">
+                        <h2 class="section__title story__section-title xmas_text">
                             About Us
                         </h2>
-                        <h1 class="story__title">
+                        <h1 class="story__title xmas_text_alt">
                             WELCOME TO <br> ALTOS EDUHUB 
                         </h1>
                         <p class="home__description text-light">
@@ -265,6 +298,11 @@
                     </div>
 
                     <div class="story__images" >
+                        <div class="position-relative" style="z-index: 1;">
+                            <div class="position-absolute end-0 santa_peek22_top">
+                              <img id="santa_peek22" draggable="false" src="{% static 'xmas/decor/xmaspap_peek.png' %}" alt="" style="margin-left: -15%; margin-top: -20%;">
+                            </div>
+                          </div>
                         <img src="{% static 'img/bg7.jpg' %}" alt="" class="story__img">
                         <div class="story__square" ></div>
                     </div>
@@ -273,12 +311,17 @@
 
             <!--==================== FEATURED ====================-->
             <section class="featured section container" id="featured">
-                <h2 class="section__title">
+                <h2 class="section__title xmas_text">
                     Secure Your IT Future
                 </h2>
 
                 <div class="featured__container grid">
                     <article class="featured__card">
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-top.png' %}" alt="" style="height: 15vh">
+                            </div>
+                        </div>
                         <span class="featured__tag"></span>
 
                         <img src="{% static 'img/jumpcarrer.jpg' %}" alt="Jumpstart Your IT Career" class="featured__img">
@@ -290,9 +333,20 @@
                        
                         <a href="{% url 'CarrerStart' %}"  class="button featured__button xmas-button" style="text-decoration: none; color: white;">Explore</a>
                         <!-- <button class="button featured__button">Explore</button> -->
+                        <br><br>
+                        <div class="position-relative featured__button" style="z-index: 1; margin-bottom: -11%;">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-bottom.png' %}" alt="">
+                            </div>
+                        </div>
                     </article>
 
                     <article class="featured__card">
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-top.png' %}" alt="" style="height: 15vh">
+                            </div>
+                        </div>
                         <span class="featured__tag"></span>
 
                         <img src="{% static 'img/transit.jpg' %}" alt="Transitioning to IT" class="featured__img">
@@ -303,9 +357,20 @@
                         </div>
 
                         <a href="{% url 'CarrerTransit' %}"  class="button featured__button xmas-button" style="text-decoration: none; color: white;">Explore</a>
+                        <br><br>
+                        <div class="position-relative featured__button" style="z-index: 1; margin-bottom: -11%;">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-bottom.png' %}" alt="">
+                            </div>
+                        </div>
                     </article>
 
                     <article class="featured__card">
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-top.png' %}" alt="" style="height: 15vh">
+                            </div>
+                        </div>
                         <span class="featured__tag"></span>
 
                         <img src="{% static 'img/brigeup.jpg' %}" alt="Bridging the Gap" class="featured__img">
@@ -316,10 +381,21 @@
                         </div>
 
                         <a href="{% url 'BridgingGap' %}"  class="button featured__button xmas-button" style="text-decoration: none; color: white;">Explore</a>
+                        <br><br>
+                        <div class="position-relative featured__button" style="z-index: 1; margin-bottom: -11%;">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-bottom.png' %}" alt="">
+                            </div>
+                        </div>
                     </article>
                     
 
                     <article class="featured__card">
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-top.png' %}" alt="" style="height: 15vh">
+                            </div>
+                        </div>
                         <span class="featured__tag"></span>
 
                         <img src="{% static 'img/restart.jpg' %}" alt="Bridging the Gap" class="featured__img">
@@ -331,13 +407,19 @@
                         </div>
 
                         <a href="{% url 'CarrerRestart' %}"  class="button featured__button xmas-button"  style="text-decoration: none; color: white;">Explore</a>
+                        <br><br>
+                        <div class="position-relative featured__button" style="z-index: 1; margin-bottom: -11%;">
+                            <div class="position-absolute red_top_top" style="margin-top: -5vh;">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/frame-bottom.png' %}" alt="">
+                            </div>
+                        </div>
                     </article>
                 </div>
             </section>
 
             <!--==================== NEW ====================-->
             <section class="new section container" id="new">
-                <h2 class="section__title">
+                <h2 class="section__title xmas_text">
                     Popular Courses
                 </h2>
                 
@@ -346,6 +428,11 @@
                         <div class="swiper-wrapper">
                             {% for cours in courses %}
                             <article class="new__card swiper-slide">
+                                <div class="position-relative" style="z-index: 1; ">
+                                    <div class="position-absolute red_top_top" style="margin-top: -5vh; margin-left: -30%;">
+                                      <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/red_ribbon_top.png' %}" alt="" style="width: 55%;">
+                                    </div>
+                                </div>
                                 <!-- <span class="new__tag"><i class='bx bx-right-arrow-alt'></i></span> -->
                                 {% if cours.image %}
                                 <img src="{{cours.image.url}}" alt="{{cours.calttag}}" class="new__img">
@@ -371,11 +458,16 @@
 
             <!--==================== SUPPORT ====================-->
             <section class="newsletter section_suport container">
-                <h2 class="section__title">
+                <h2 class="section__title xmas_text">
                     Our support
                 </h2>
-                <div class="support_bg support " id="card-container">
+                <div class="support_bg support container" id="card-container" >
                     <div class="card">
+                        <div class="position-relative" style="z-index: 99; width: 75%; margin-top: 5%; margin-left: 10%;">
+                            <div class="position-absolute red_top_top">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/blue_ribbon_top.png' %}" alt="">
+                            </div>
+                        </div>
                         <div class="face face1">
                             <div class="content">
                                 <div class="icon">
@@ -383,16 +475,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="face face2">
+                        <div class="face face2" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                             <div class="content">
                                 <h3>
-                                    <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">Skilled Instructors</a>
+                                    <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank" style="text-decoration: none; color: #1f1f1f;">Skilled Instructors</a>
                                 </h3>
                                 <p>Our instructors are industry experts committed to providing up-to-date training to learners.</p>
                             </div>
                         </div>
                     </div>
                     <div class="card">
+                        <div class="position-relative" style="z-index: 99; width: 75%; margin-top: 5%; margin-left: 10%;">
+                            <div class="position-absolute red_top_top">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/blue_ribbon_top.png' %}" alt="">
+                            </div>
+                        </div>
                         <div class="face face1">
                             <div class="content">
                                 <div class="icon">
@@ -400,16 +497,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="face face2">
+                        <div class="face face2" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                             <div class="content">
                                 <h3>
-                                    <a href="#" target="_blank">Online Classes</a>
+                                    <a href="#" target="_blank" style="text-decoration: none; color: #1f1f1f;">Online Classes</a>
                                 </h3>
                                 <p>Our online classes offer learners the convenience of studying from anywhere, at any time.</p>
                             </div>
                         </div>
                     </div>
                     <div class="card">
+                        <div class="position-relative" style="z-index: 99; width: 75%; margin-top: 5%; margin-left: 10%;">
+                            <div class="position-absolute red_top_top">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/blue_ribbon_top.png' %}" alt="">
+                            </div>
+                        </div>
                         <div class="face face1">
                             <div class="content">
                                 <div class="icon">
@@ -419,18 +521,16 @@
                                 
                             </div>
                         </div>
-                        <div class="face face2">
+                        <div class="face face2" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                             <div class="content">
                                 <h3>
-                                    <a href="#" target="_blank">Placement Assistance</a>
+                                    <a href="#" target="_blank" style="text-decoration: none; color: #1f1f1f;">Placement Assistance</a>
                                 </h3>
                                 <p>We provide learners with career guidance and support, helping them to secure a fulfilling career in the software industry.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
             </section>
 
 
@@ -438,7 +538,12 @@
             <!--==================== COUNT ====================-->
 
             <section class="newsletter section container"  id="counter">
-                <div class="newsletter__bg grid">
+                <div class="position-relative" style="z-index: 1;" > 
+                    <div class="position-absolute end-0 santa_peek22_top" >
+                      <img id="santa_peek22" draggable="false" src="{% static 'xmas/decor/candy_Cane.png' %}" alt="" style="width: 32%; margin-top: -2%; margin-left: -11%;">
+                    </div>
+                </div>
+                <div class="newsletter__bg grid" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                     <div>
                         <h2 class="newsletter__title">We Take Pride in  <br> Our Numbers</h2>
                         <p class="newsletter__description">
@@ -484,13 +589,18 @@
 
             <!--==================== INSTRUCTORS ====================-->
             <section class="products section container" id="products">
-                <h2 class="section__title">
+                <h2 class="section__title xmas_text">
                     Instructors
                 </h2>
 
                 <div class="products__container grid">
                     {% for inst in instrs %}
                     <article class="products__card">
+                        <div class="position-relative" style="z-index: 99; width: 75%; margin-top: -10%; margin-left: 15%;">
+                            <div class="position-absolute red_top_top">
+                              <img id="red_top" draggable="false" src="{% static 'xmas/decor/new_ribbons/blue_ribbon_top.png' %}" alt="">
+                            </div>
+                        </div>
                         {% if inst.image %}
                         <img src="{{inst.image.url}}" alt="{{inst.instalttag}}" class="products__img">
                         {% endif %}
@@ -499,7 +609,7 @@
                         <span class="products__price">{{inst.designation}}</span>
 
                         <button class="products__button">
-                            <i class='bx bx-heart'></i>
+                            <i class='bx bx-heart xmas-button'></i>
                         </button>
                     </article>
                     {% endfor %}
@@ -559,8 +669,43 @@
             </section>
 
            
-           
+           <br><br>
         </main>
+        
+
+        <div class="position-relative" style="z-index: 1;" style="margin-top: 10vh; ">
+            <div class="position-absolute" >
+                <div class="d-flex" style="overflow-x: hidden;">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    <img width="150rem" draggable="false" src="{% static 'xmas/decor/white_paint_dripping.png' %}" alt="">
+                    
+                </div>
+            </div>
+        </div>
+
 
         <!--==================== FOOTER ====================-->
         <footer class="footer section" style="background-color: #1f1f1f;">
