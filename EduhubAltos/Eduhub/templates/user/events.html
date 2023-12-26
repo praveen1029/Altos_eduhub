@@ -74,6 +74,14 @@
         color: white;
         text-shadow: 3px 3px 10px rgba(38, 138, 5, 0.797);
     }
+
+    @media screen and (min-width: 750px ) and (max-width : 1090px) {
+        .santa_peek22_top{
+            margin-left: -12%;
+            margin-top: 10%;
+            width: 50%;
+        }
+    }
    </style>
 
    <body>
@@ -130,6 +138,7 @@
                    </ul>
 
                    <div class="nav__close" id="nav-close">
+                    <br>
                        <i class='bx bx-x' ></i>
                    </div>
                </div>
@@ -212,7 +221,12 @@
                    </div>
 
                    <div class="story__images" >
-                       <img src="{% static 'img/bg7.jpg' %}" alt="" class="story__img">
+                       <div class="position-relative" style="z-index: 1;">
+                            <div class="position-absolute end-0 santa_peek22_top">
+                                <img id="santa_peek22" draggable="false" width="75%" src="{% static 'xmas/decor/xams_snoman_peek_no_bg_mirror.png' %}" alt="" style="margin-left: -30%; margin-top: -20%;">
+                            </div>
+                        </div>
+                        <img src="{% static 'img/bg7.jpg' %}" alt="" class="story__img">
                        <div class="story__square" ></div>
                    </div>
                </div>

@@ -115,6 +115,7 @@
                     </ul>
 
                     <div class="nav__close" id="nav-close">
+                        <br>
                         <i class='bx bx-x' ></i>
                     </div>
                 </div>
@@ -241,6 +242,11 @@
                         </div>
 
                         <div class="story__images">
+                            <div class="position-relative" style="z-index: 1; ">
+                                <div class="position-absolute red_top_top" style="margin-top: -35%;">
+                                  <img id="red_top" draggable="false" src="{% static '/xmas/decor/cap.png'' %}" alt="" style="width: 30%; margin-left: 5%;">
+                                </div>
+                            </div>
                             <img src="{% static 'img/jumpcarrer.jpg' %}" alt="Jumpstart Your IT Career" class="story__img">
                             <div class="story__square" ></div>
                         </div>
@@ -252,10 +258,10 @@
                 
                 {% for course in courses %}
                 <section class="newsletter section container" >
-                    <div class="newsletter__bg grid">
+                    <div class="newsletter__bg grid" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                         <div>
                             <h2 class="newsletter__title">{{course.course_name}} </h2>
-                            <p class="course__description mb-3">
+                            <p class="course__description mb-3" style="color: black;">
                                 {{course.description}}
                             </p>
                             <div class=" course_details_img_box">
@@ -286,7 +292,7 @@
                         {% endfor %}
                         {% for ctg in categ %}
                         {% if course.id == ctg.Cate_course_id.id %}
-                        <div class="course_bottom_details">
+                        <div class="course_bottom_details" style="color: black;">
                             <div>Duration : {{ctg.Duration}}</div>
                             <div>Next Batch On : {{ctg.Start_date}}</div>
                             

@@ -82,6 +82,47 @@
             margin-left: -2rem;
             margin-top: -1rem;
         }
+
+
+        @media screen and (min-width: 100px) and (max-width:999px){
+            
+            .home__img-bg{
+                margin-top: 25%;
+            }
+
+        }
+
+        @media screen and (min-width: 400px) and (max-width:750px){
+
+            .home__inner__img{
+                margin-left: -100%;
+            }
+
+        }
+
+        @media screen and (min-width: 1000px) and (max-width:1350px){
+            
+            .home__inner__img{
+                margin-left: -30%;
+            }
+
+            #thumbs{
+                margin-left: -20%;
+            }
+        }
+
+        
+        @media screen and (min-width: 150px) and (max-width:399px){
+
+            #thumbs{
+                margin-left: -25%;
+            }
+
+            .home__inner__img{
+                margin-left: -50%;
+            }
+
+        }
     </style>
 
     <body>
@@ -139,6 +180,7 @@
                     </ul>
 
                     <div class="nav__close" id="nav-close">
+                        <br>
                         <i class='bx bx-x' ></i>
                     </div>
                 </div>
@@ -228,16 +270,13 @@
         <main class="main" style="background-color: #1f1f1f;">
             <!--==================== HOME ====================-->
 
-            <section class="home" id="home" style="background-image: url('static/xmas/decor/xmas_black.png'); background-size:cover;">
+            <section class="home" id="home" style="background-image: url('static/xmas/cards/card1.png'); background-size:cover; padding-top: 5vh;">
                 <div class="home__container container grid">
                     
                     <div class="home__img-bg " > 
-                        <div class="position-absolute">
-                            <img class="xmas_silk_gif" width="150rem" draggable="false" src="{% static 'xmas/gifs/xmas-silk.gif' %}" alt="">
-                            <img src="static/img/home_inner.png" alt="" class="home__inner__img">
-                        </div>
+                        <img src="static/img/home_inner.png" alt="" class="home__inner__img">
                         
-                        <img src="static/xmas/decor/santa-thumbsup.png" alt="" class="home__inner__img" style="margin-left: 50%; width: 60%;">
+                        <img src="static/xmas/decor/santa-thumbsup.png" alt="" style="width: 60%;" id="thumbs">
                     </div>
     
                     <div class="home__social text-white mt-5">
@@ -270,6 +309,8 @@
                                 JOIN NOW
                             </a>
                         </div>
+                        <br>
+                        <img src="{% static 'xmas/decor/big_present.png' %}" alt="" width="75%" >
                     </div>
                 </div>
             </section>
@@ -302,7 +343,7 @@
                             <div class="position-absolute end-0 santa_peek22_top">
                               <img id="santa_peek22" draggable="false" src="{% static 'xmas/decor/xmaspap_peek.png' %}" alt="" style="margin-left: -15%; margin-top: -20%;">
                             </div>
-                          </div>
+                        </div>
                         <img src="{% static 'img/bg7.jpg' %}" alt="" class="story__img">
                         <div class="story__square" ></div>
                     </div>

@@ -118,6 +118,7 @@
                     </ul>
 
                     <div class="nav__close" id="nav-close">
+                        <br>
                         <i class='bx bx-x' ></i>
                     </div>
                 </div>
@@ -176,10 +177,10 @@
                 
                 {% for course in courses %}
                 <section class="newsletter section container" >
-                    <div class="newsletter__bg grid">
+                    <div class="newsletter__bg grid" style="background-image: url('static/xmas/bg/card_bg1.png'); background-size:contain; background-blend-mode: overlay;">
                         <div>
                             <h2 class="newsletter__title">{{course.course_name}} </h2>
-                            <p class="course__description mb-3">
+                            <p class="course__description mb-3" style="color: black;">
                                 {{course.description}}
                             </p>
                             <div class=" course_details_img_box">
@@ -210,7 +211,7 @@
                         {% endfor %}
                         {% for ctg in categ %}
                         {% if course.id == ctg.Cate_course_id.id %}
-                        <div class="course_bottom_details">
+                        <div class="course_bottom_details" style="color: black;">
                             <div>Duration : {{ctg.Duration}}</div>
                             <div>Next Batch On : {{ctg.Start_date}}</div>
                             

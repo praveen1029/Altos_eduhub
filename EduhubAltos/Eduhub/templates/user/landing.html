@@ -110,6 +110,48 @@
                 margin-left: -2rem;
                 margin-top: -1rem;
             }
+
+
+        @media screen and (min-width: 100px) and (max-width:999px){
+            
+            .home__img-bg{
+                margin-top: 25%;
+            }
+
+        }
+
+        @media screen and (min-width: 400px) and (max-width:750px){
+
+            .home__inner__img{
+                margin-left: -100%;
+            }
+
+        }
+
+        @media screen and (min-width: 1000px) and (max-width:1350px){
+            
+            .home__inner__img{
+                margin-left: -30%;
+            }
+
+            #thumbs{
+                margin-left: -20%;
+            }
+        }
+
+        
+        @media screen and (min-width: 150px) and (max-width:399px){
+
+            #thumbs{
+                margin-left: -25%;
+            }
+
+            .home__inner__img{
+                margin-left: -50%;
+            }
+
+        }
+
         </style>
         <div class="snow-container" style="z-index: 1;"></div>
         <!--==================== HEADER ====================-->
@@ -164,6 +206,7 @@
                     </ul>
 
                     <div class="nav__close" id="nav-close">
+                        <br>
                         <i class='bx bx-x' ></i>
                     </div>
                 </div>
@@ -252,16 +295,12 @@
         <!--==================== MAIN ====================-->
         <main class="main" style="background-color: #1f1f1f;">
             <!--==================== HOME ====================-->
-            <section class="home" id="home" style="background-image: url('static/xmas/decor/xmas_black.png'); background-size:cover;">
+            <section class="home" id="home" style="background-image: url('static/xmas/cards/card1.png'); background-size:cover; padding-top: 5vh;">
                 <div class="home__container container grid">
                     
-                    <div class="home__img-bg " > 
-                        <div class="position-absolute">
-                            <img class="xmas_silk_gif" width="150rem" draggable="false" src="{% static 'xmas/gifs/xmas-silk.gif' %}" alt="">
-                            <img src="static/img/home_inner.png" alt="" class="home__inner__img">
-                        </div>
-                        
-                        <img src="static/xmas/decor/santa-thumbsup.png" alt="" class="home__inner__img" style="margin-left: 50%; width: 60%;">
+                    <div class="home__img-bg" > 
+                        <img src="static/img/home_inner.png" alt="" class="home__inner__img">
+                        <img src="static/xmas/decor/santa-thumbsup.png" alt="" style=" width: 60%;" id="thumbs">
                     </div>
     
                     <div class="home__social text-white mt-5">

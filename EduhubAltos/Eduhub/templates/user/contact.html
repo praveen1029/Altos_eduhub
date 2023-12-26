@@ -115,6 +115,7 @@
                         </li>
                     </ul>
                     <div class="nav__close" id="nav-close">
+                        <br>
                         <i class='bx bx-x' ></i>
                     </div>
                 </div>
@@ -173,10 +174,16 @@
              <!--==================== HOME ====================-->
              <section class="home" id="home" style="background-image: url('static/img/bg3.jpg'); background-repeat: no-repeat;background-size:cover;">
                 <div class="home__container container grid">
+                    
                     <div class="home__img-bg">
+                        <div class="position-relative" style="z-index: 1; ">
+                            <div class="position-absolute red_top_top" >
+                              <img id="red_top" draggable="false" src="{% static '/xmas/decor/cap.png'' %}" alt="" >
+                            </div>
+                        </div>
                         <img src="{% static 'img/contact_bg.png' %}" alt="" class="home__img">
                     </div>
-    
+
                     <div class="home__social text-light mt-5">
                         <a href="https://www.facebook.com/people/ALTOS-Technologies/100084886970426/" target="_blank" class="home__social-link">
                             Facebook
@@ -192,7 +199,7 @@
                     <div class="home__data">
                         {% if msg %}
                         <p class="message_data" >{{msg}}</p>
-                        {% endif %}
+                        {% endif %}                        
                         <h1 class="home__title xmas_text">Contact For Any Query </h1>
                         <p class="home__description text-light">
                             Welcome to Altos Eduhub's Contact Us page! We're thrilled that you're interested 
@@ -203,13 +210,18 @@
                         </p>
                         <!-- <span class="home__price">$1245</span> -->
 
-                        <div class="home__btns">
+                        <div class="home__btns justify-content-between">
                             <a href="#second-section" class="button button--gray button--small xmas-button" style="text-decoration: none; color: white;">
                                 Connect
                             </a>
 
+                        <img src="static/xmas/gifs/santa_sled.gif" alt="" width="40%">
+                            
+
+
                             <!-- <button class="button home__button">ADD TO CART</button> -->
                         </div>
+
                     </div>
                 </div>
             </section>
